@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stride.TextureConverter" Version="4.1.0.1734" />
     <PackageReference Include="WindowsAPICodePack" Version="7.0.3" />
   </ItemGroup>
 
