@@ -35,6 +35,11 @@
             this.GChannel = new System.Windows.Forms.CheckBox();
             this.BChannel = new System.Windows.Forms.CheckBox();
             this.AChannel = new System.Windows.Forms.CheckBox();
+            this.GammaToLinner = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LinnerToGamma = new System.Windows.Forms.CheckBox();
+            this.Custom = new System.Windows.Forms.CheckBox();
+            this.CustomValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TextureTransform
@@ -110,11 +115,65 @@
             this.AChannel.UseVisualStyleBackColor = true;
             this.AChannel.CheckedChanged += new System.EventHandler(this.AChannel_CheckedChanged);
             // 
+            // GammaToLinner
+            // 
+            this.GammaToLinner.AutoSize = true;
+            this.GammaToLinner.Location = new System.Drawing.Point(284, 53);
+            this.GammaToLinner.Name = "GammaToLinner";
+            this.GammaToLinner.Size = new System.Drawing.Size(122, 21);
+            this.GammaToLinner.TabIndex = 7;
+            this.GammaToLinner.Text = "GammaToLinner";
+            this.GammaToLinner.UseVisualStyleBackColor = true;
+            this.GammaToLinner.CheckedChanged += new System.EventHandler(this.GammaToLinner_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "转换方式";
+            // 
+            // LinnerToGamma
+            // 
+            this.LinnerToGamma.AutoSize = true;
+            this.LinnerToGamma.Location = new System.Drawing.Point(284, 80);
+            this.LinnerToGamma.Name = "LinnerToGamma";
+            this.LinnerToGamma.Size = new System.Drawing.Size(122, 21);
+            this.LinnerToGamma.TabIndex = 9;
+            this.LinnerToGamma.Text = "LinnerToGamma";
+            this.LinnerToGamma.UseVisualStyleBackColor = true;
+            this.LinnerToGamma.CheckedChanged += new System.EventHandler(this.LinnerToGamma_CheckedChanged);
+            // 
+            // Custom
+            // 
+            this.Custom.AutoSize = true;
+            this.Custom.Location = new System.Drawing.Point(284, 107);
+            this.Custom.Name = "Custom";
+            this.Custom.Size = new System.Drawing.Size(63, 21);
+            this.Custom.TabIndex = 10;
+            this.Custom.Text = "自定义";
+            this.Custom.UseVisualStyleBackColor = true;
+            this.Custom.CheckedChanged += new System.EventHandler(this.Custom_CheckedChanged);
+            // 
+            // CustomValue
+            // 
+            this.CustomValue.Location = new System.Drawing.Point(353, 105);
+            this.CustomValue.Name = "CustomValue";
+            this.CustomValue.Size = new System.Drawing.Size(100, 23);
+            this.CustomValue.TabIndex = 11;
+            // 
             // ColorSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(481, 157);
+            this.Controls.Add(this.CustomValue);
+            this.Controls.Add(this.Custom);
+            this.Controls.Add(this.LinnerToGamma);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.GammaToLinner);
             this.Controls.Add(this.AChannel);
             this.Controls.Add(this.BChannel);
             this.Controls.Add(this.GChannel);
@@ -138,5 +197,10 @@
         private CheckBox GChannel;
         private CheckBox BChannel;
         private CheckBox AChannel;
+        private CheckBox GammaToLinner;
+        private Label label2;
+        private CheckBox LinnerToGamma;
+        private CheckBox Custom;
+        private TextBox CustomValue;
     }
 }
