@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorSpace));
             this.TextureTransform = new System.Windows.Forms.Button();
             this.FolderTransform = new System.Windows.Forms.Button();
             this.RChannel = new System.Windows.Forms.CheckBox();
@@ -181,6 +182,7 @@
             this.Controls.Add(this.RChannel);
             this.Controls.Add(this.FolderTransform);
             this.Controls.Add(this.TextureTransform);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ColorSpace";
             this.Text = "ColorSpace";
             this.ResumeLayout(false);
