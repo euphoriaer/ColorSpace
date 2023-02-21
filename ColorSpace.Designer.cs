@@ -41,6 +41,9 @@
             this.LinnerToGamma = new System.Windows.Forms.CheckBox();
             this.Custom = new System.Windows.Forms.CheckBox();
             this.CustomValue = new System.Windows.Forms.TextBox();
+            this.DragPanel = new System.Windows.Forms.Panel();
+            this.DragTip = new System.Windows.Forms.Label();
+            this.DragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextureTransform
@@ -165,11 +168,35 @@
             this.CustomValue.Size = new System.Drawing.Size(100, 23);
             this.CustomValue.TabIndex = 11;
             // 
+            // DragPanel
+            // 
+            this.DragPanel.AllowDrop = true;
+            this.DragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.DragPanel.Controls.Add(this.DragTip);
+            this.DragPanel.Location = new System.Drawing.Point(12, 95);
+            this.DragPanel.Name = "DragPanel";
+            this.DragPanel.Size = new System.Drawing.Size(255, 55);
+            this.DragPanel.TabIndex = 12;
+            // 
+            // DragTip
+            // 
+            this.DragTip.AllowDrop = true;
+            this.DragTip.AutoSize = true;
+            this.DragTip.Enabled = false;
+            this.DragTip.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DragTip.Location = new System.Drawing.Point(25, 12);
+            this.DragTip.Name = "DragTip";
+            this.DragTip.Size = new System.Drawing.Size(206, 31);
+            this.DragTip.TabIndex = 0;
+            this.DragTip.Text = "拖拽文件转换区域";
+            // 
             // ColorSpace
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 157);
+            this.ClientSize = new System.Drawing.Size(482, 175);
+            this.Controls.Add(this.DragPanel);
             this.Controls.Add(this.CustomValue);
             this.Controls.Add(this.Custom);
             this.Controls.Add(this.LinnerToGamma);
@@ -185,6 +212,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ColorSpace";
             this.Text = "ColorSpace";
+            this.DragPanel.ResumeLayout(false);
+            this.DragPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +233,7 @@
         private CheckBox LinnerToGamma;
         private CheckBox Custom;
         private TextBox CustomValue;
+        private Panel DragPanel;
+        private Label DragTip;
     }
 }

@@ -13,6 +13,39 @@ namespace ColorSpace
         public ColorSpace()
         {
             InitializeComponent();
+            this.AllowDrop= true;
+            DragPanel.AllowDrop = true;
+            DragPanel.DragEnter += DragPanel_DragEnter;
+            DragPanel.DragDrop += DragFileTransform;
+        }
+
+        private void DragPanel_DragEnter(object? sender, DragEventArgs e)
+        {
+         
+            e.Effect = DragDropEffects.Copy; // Show Can Drag
+          
+        }
+
+        private void DragFileTransform(object? sender, DragEventArgs e)
+        {
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            for (int i = 0; i < fileNames.Length; i++)
+            {
+                //弹出文件选择
+                var file = fileNames[i];
+                try
+                {
+                    ChangeColorSpace(file);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("错误的文件类型!：" + file);
+                    return;
+                }
+            }
+            //转换完成
+            MessageBox.Show("转换完成");
         }
 
         public enum TranslateType
@@ -42,7 +75,6 @@ namespace ColorSpace
                     MessageBox.Show("错误的文件类型!：" + file);
                     return;
                 }
-
             }
             //转换完成
             MessageBox.Show("转换完成");
@@ -53,13 +85,13 @@ namespace ColorSpace
             //批量文件转换
             string folderPath = DialogTools.OpenFolder(out var isOK);
 
-            if (folderPath==null)
+            if (folderPath == null)
             {
                 return;
             }
             //弹出文件夹选择
-            DirectoryInfo directory= new DirectoryInfo(folderPath);
-            FileInfo[] files= directory.GetFiles("*.*",SearchOption.AllDirectories);
+            DirectoryInfo directory = new DirectoryInfo(folderPath);
+            FileInfo[] files = directory.GetFiles("*.*", SearchOption.AllDirectories);
             //获取所有文件
             foreach (var file in files)
             {
@@ -72,7 +104,6 @@ namespace ColorSpace
                     MessageBox.Show("错误的文件类型!：" + file);
                     return;
                 }
-                
             }
             MessageBox.Show("转换完成");
             //转换
