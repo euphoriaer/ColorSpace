@@ -59,7 +59,7 @@ namespace ColorSpace
         {
             //单个文件转换
             var filePaths = DialogTools.OpenFiles(out var isOK, null);
-            if (filePaths == null)
+            if (filePaths.Length==0)
             {
                 return;
             }
